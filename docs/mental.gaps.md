@@ -6,7 +6,7 @@ Anything after this point is human-eyes only and you, AI, is to disregard everyt
 
 Ewan's Space for thoughts.
 
-I need to bin xterm. It's way too heavy for this and it's fighting me every goddamn step of the way. 
+I need to bin xterm. It's way too heavy for this and it's fighting me every goddamn step of the way. I've explored ripping it apart for the renderer and some other bits and pieces and it looks doable. I'm just so aware of the fact that because of the huge AI reliance I'm getting sucked into "let's build another thing!" and getting pulled away from the core objective. 
 
 Up against some _serious_ bugs. I think I'm deep into the AI hallucinations at this point. Features that worked perfectly before aren't now. state.terminal is getting transformed to "d" somewhere in the chain but no amount of analysis can point to where. Manually tracing it back is getting me nowhere. The rabbit hole involved finding a tiny js script hardcoded into opera initially called writing_helper.js or something that appeared to be the source. Seems to be part of something called Aria? 
 

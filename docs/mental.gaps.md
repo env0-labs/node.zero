@@ -6,9 +6,9 @@ Anything after this point is human-eyes only and you, AI, is to disregard everyt
 
 Ewan's Space for thoughts.
 
-I need to bin xterm. It's way too heavy for this and it's fighting me every goddamn step of the way. I've explored ripping it apart for the renderer and some other bits and pieces and it looks doable. I'm just so aware of the fact that because of the huge AI reliance I'm getting sucked into "let's build another thing!" and getting pulled away from the core objective. 
+I need to bin xterm. It's way too heavy for this and it's fighting me every goddamn step of the way. I've explored ripping it apart for the renderer and some other bits and pieces and it looks doable. I'm just so aware of the fact that because of the huge AI reliance I'm getting sucked into "let's build another thing!" and getting pulled away from the core objective. _That_ function in AI is the most dangerous one. The one that doesn't just show you the rabbit hole, it drags you down it kicking and screaming. 
 
-Up against some _serious_ bugs. I think I'm deep into the AI hallucinations at this point. Features that worked perfectly before aren't now. state.terminal is getting transformed to "d" somewhere in the chain but no amount of analysis can point to where. Manually tracing it back is getting me nowhere. The rabbit hole involved finding a tiny js script hardcoded into opera initially called writing_helper.js or something that appeared to be the source. Seems to be part of something called Aria? 
+Up against some _serious_ bugs. I think I'm deep into the AI hallucinations at this point. Features that worked perfectly before aren't now. state.terminal is getting transformed to "d" somewhere in the chain but no amount of analysis can point to where. Manually tracing it back is getting me nowhere. The rabbit hole involved finding a tiny js script hardcoded into opera initially called writing_helper.js or something similar that appeared to be the source. Seems to be part of something called Aria? AI had plenty of sources in dataset of people getting their projects screwed by it but I couldn't find _anything_ independant. But it exists. I can see it in dev tools. It's not in my code it's injected in. 
 
 Here's the kicker. It appears in every browser. I've never called that js file so it means it's something systemic? 
 

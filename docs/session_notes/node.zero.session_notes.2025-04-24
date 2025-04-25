@@ -1,0 +1,60 @@
+# Session Notes: `node.zero` Structure and Design
+
+## 🧠 `node.zero` Planning — Detailed Overview
+
+### 🎯 Core Concept
+
+> Teach how modern security architecture resists lateral movement — not how to exploit systems, but how real ones behave under pressure.
+
+---
+
+### 🧱 Level Structure
+
+Each level is a different **abstraction of the same system**, with increasing control, segmentation, and realism. The system stays the same. The **policies change**.
+
+| Level | Concept Introduced     | Security Effect                           | Player Response                      |
+|-------|-------------------------|--------------------------------------------|--------------------------------------|
+| 1     | Open system             | No restrictions, default allow             | Immediate access                     |
+| 2     | Local alerting          | Commands trigger detection                 | Must avoid noisy recon               |
+| 3     | Remote SIEM             | Actions are logged and correlated          | Stealth needed; detection is global  |
+| 4     | Zero trust segmentation | No lateral movement; auth scoped tightly   | No real way in; recognize wall       |
+| 5     | Vaulting / tokenization | No static creds; ephemeral auth only       | Can’t rely on file-based access      |
+| 6     | Human failure           | An admin leaked credentials                | Only real way in — hygiene failure   |
+
+---
+
+### 🧪 Key Educational Takeaways
+
+- Players learn why segmentation and credential control matter  
+- Simulate frustration without punishing the player — focus on **recognition, not reward**  
+- Show that even in perfect systems, humans reintroduce risk  
+- Teach the difference between legacy assumptions and modern architectures
+
+---
+
+### 🧰 System Tools / Features by Level
+
+| Layer        | Tool Introduced             | Simulated Mechanic                    |
+|--------------|------------------------------|----------------------------------------|
+| Level 2      | `auditctl` / local syslog   | File write triggers local alerts      |
+| Level 3      | SIEM + correlation          | Recon across hosts → triggers         |
+| Level 4      | Zero trust networking       | No ping / no access unless scoped     |
+| Level 5      | Credential vault (e.g. HashiCorp) | No `id_rsa`, no `/etc/shadow` access |
+| Level 6      | Bad hygiene                 | `notes.txt` with hardcoded secrets     |
+
+---
+
+### 🛑 Ethical boundary
+
+- Never teach *bypass tactics*
+- Instead, simulate what attackers *would expect* to fail — and how real systems prevent it
+- Show that failure to compromise is still **progress** if the player understands *why*
+
+---
+
+### 📍 Design Implications
+
+- Filesystems need to evolve across levels, not expand
+- Every file = narrative/educational value
+- Reuse system structure, change only policy + observability
+- “Winning” the last level happens not through force — but through understanding
